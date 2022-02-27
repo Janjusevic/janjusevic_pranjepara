@@ -1,2 +1,5 @@
 # janjusevic_pranjepara
-Autor Janjusevic Discord: Janjusevic#0001
+Balkan 
+Za support pridruzi se ovom discord serveru: https://discord.gg/zjZJAuUUF6
+English
+For support join our discord server: https://discord.gg/zjZJAuUUF6
