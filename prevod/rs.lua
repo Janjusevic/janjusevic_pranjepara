@@ -25,5 +25,5 @@ Locales['rs'] = {
 	['notifikacija_kupio_zeton']	= 'Kupio si Zeton za ~b~',
 	['nema_para_zeton']		= 'Nemas dovoljno novca kako bi kupio zeton!',
 	['poruka_za_cheatera']	    	= 'Vise srece drugi put :)',
-	['notifikacija_protekcija']	= 'Zeton se magicno izgubio!'
+	['notifikacija_protekcija']	= 'Nemoj da glitchujes nije to lepo!'
 }
