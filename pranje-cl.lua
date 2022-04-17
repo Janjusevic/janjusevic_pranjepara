@@ -66,7 +66,7 @@ Citizen.CreateThread(function ()
 							ESX.ShowNotification(_U('notifikacija_nema_zeton'))
 						end
 					end)
-            	end
+            	 end
 			end
         end
 
