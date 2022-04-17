@@ -129,7 +129,7 @@ function PranjePara(zone)
 						menu.close()
 							ESX.TriggerServerCallback('janjusevic:imalipare', function(imapare)
 								if imapare then
-									TriggerEvent('janjusevic:animacija_pranje')
+									TriggerEvent('janjusevic:animacija', Config.DuzinaPranja)
 									exports['progressBars']:startUI(Config.DuzinaPranja, _U("progres_peres_pare"))
 									Wait(Config.DuzinaPranja)
 									DisableAllControlActions(0)
@@ -180,7 +180,7 @@ function SusenjaPara()
 				ESX.TriggerServerCallback('janjusevic:imalimokrepare', function(imamokrepare)
 					local vreme = 5000
 					if imamokrepare then
-						TriggerEvent('janjusevic:animacija_susenje')
+						TriggerEvent('janjusevic:animacija', Config.DuzinaSusenja)
 						exports['progressBars']:startUI(Config.DuzinaSusenja, _U('progres_susis_pare'))
 						Wait(Config.DuzinaSusenja)
         				TriggerServerEvent('janjusevic:osusi_pare')
@@ -235,38 +235,18 @@ function ProdajaZetona()
     )
 end
 
--- ANIMACIJA PRANJA
+-- ZA SVE (UPDATE 17/04/2022)
 
-RegisterNetEvent('janjusevic:animacija_pranje')
-AddEventHandler('janjusevic:animacija_pranje', function()
+RegisterNetEvent('janjusevic:animacija')
+AddEventHandler('janjusevic:animacija', function(duzina)
 	if not uanimaciji then
 		uanimaciji = true
 		Citizen.CreateThread(function()
 			local playerPed = PlayerPedId()
 			ESX.Streaming.RequestAnimDict('amb@prop_human_bum_bin@base', function()
 				FreezeEntityPosition(PlayerPedId(), true)
-					TaskPlayAnim(playerPed, 'amb@prop_human_bum_bin@base', 'base', 8.0, -8, -1, 49, 0, 0, 0, 0)
-				Citizen.Wait(Config.DuzinaPranja)
-				uanimaciji = false
-				FreezeEntityPosition(PlayerPedId(), false)
-				ClearPedSecondaryTask(playerPed)
-			end)
-		end)
-	end
-end)
-
--- ANIMACIJA SUSENJA
-
-RegisterNetEvent('janjusevic:animacija_susenje')
-AddEventHandler('janjusevic:animacija_susenje', function()
-	if not uanimaciji then
-		uanimaciji = true
-		Citizen.CreateThread(function()
-			local playerPed = PlayerPedId()
-			ESX.Streaming.RequestAnimDict('amb@prop_human_bum_bin@base', function()
-				FreezeEntityPosition(PlayerPedId(), true)
-					TaskPlayAnim(playerPed, 'amb@prop_human_bum_bin@base', 'base', 8.0, -8, -1, 49, 0, 0, 0, 0)
-				Citizen.Wait(Config.DuzinaSusenja)
+				TaskPlayAnim(playerPed, 'amb@prop_human_bum_bin@base', 'base', 8.0, -8, -1, 49, 0, 0, 0, 0)
+				Citizen.Wait(duzina)
 				uanimaciji = false
 				FreezeEntityPosition(PlayerPedId(), false)
 				ClearPedSecondaryTask(playerPed)
