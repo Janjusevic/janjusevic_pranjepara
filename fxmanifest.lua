@@ -15,6 +15,5 @@ server_scripts {
 	'@es_extended/locale.lua',
 	'prevod/rs.lua',
 	'config.lua',
-	'pranje-sv.lua',
-	'version.lua'
+	'pranje-sv.lua'
 }
