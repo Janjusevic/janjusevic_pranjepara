@@ -1,8 +1,3 @@
 # janjusevic_pranjepara
-Balkan 
 
-Za support pridruzi se ovom discord serveru: https://discord.gg/wsqYQjbAds
-
-English
-
-For support join our discord server: https://discord.gg/wsqYQjbAds
+If you want to ask me a question about this script or need support contact me on discord: Janjusevic#0001
